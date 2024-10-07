@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-const { Types } = require('mongoose'); // Corrected import
+
 
 const app = express();
 const PORT = process.env.PORT || 3000; // Fallback to 3000 if PORT is not set
