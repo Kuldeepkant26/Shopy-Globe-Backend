@@ -21,11 +21,11 @@ module.exports.addProductController = async (req, res) => {
 
         const user = await Users.findOne({ email: data.email });
         if (!user) return res.status(404).json({ success: false, message: "User not found" });
+      
 
         let newProduct = new Products({ title, description, price, stock, category, image, owner: user._id });
         await newProduct.save();
         res.status(200).json({ success: true, message: "Product added successfully" });
-
     } catch (error) {
         res.status(400).json({ success: false, message: "Internal server error" });
     }
